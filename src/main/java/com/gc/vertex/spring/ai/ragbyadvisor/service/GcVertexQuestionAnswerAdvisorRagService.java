@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GcVertexSpringAIQuestionAnswerAdvisorRagService {
+public class GcVertexQuestionAnswerAdvisorRagService {
 
     private final VectorStore vectorStore;
     private final ChatModel chatModel;
 
-    public GcVertexSpringAIQuestionAnswerAdvisorRagService(VectorStore vectorStore, ChatModel chatModel) {
+    public GcVertexQuestionAnswerAdvisorRagService(VectorStore vectorStore, ChatModel chatModel) {
         this.vectorStore = vectorStore;
         this.chatModel = chatModel;
     }

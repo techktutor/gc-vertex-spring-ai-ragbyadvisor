@@ -11,12 +11,12 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GcVertexSpringAIRetrievalAugmentationAdvisorService {
+public class GcVertexRetrievalAugmentationAdvisorService {
 
     private final ChatModel chatModel;
     private final VectorStore vectorStore;
 
-    public GcVertexSpringAIRetrievalAugmentationAdvisorService(ChatModel chatModel, VectorStore vectorStore) {
+    public GcVertexRetrievalAugmentationAdvisorService(ChatModel chatModel, VectorStore vectorStore) {
         this.chatModel = chatModel;
         this.vectorStore = vectorStore;
     }
