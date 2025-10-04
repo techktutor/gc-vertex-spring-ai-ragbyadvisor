@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: rag-db
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    ports:
+      - "5432:5432"   # Boot will auto-map host port
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U devuser -d devdb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5

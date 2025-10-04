@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: gc-vertex-spring-ai-ragbyadvisor
+  ai:
+    vertex:
+      ai:
+        embedding:
+          project-id: gc-vertex-spring-ai-project
+          location: us-central1
+          text:
+            options:
+              model: text-embedding-004
+        gemini:
+          project-id: gc-vertex-spring-ai-project
+          location: us-central1
+          chat:
+            options:
+              model: gemini-2.0-flash
+              temperature: 0.5
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        remove-existing-vector-store-table: true
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 768
+        max-document-batch-size: 10000
+  datasource:
+    url: jdbc:postgresql://localhost:5432/devdb
+    username: devuser
+    password: devpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8080
+  servlet:
+    context-path: /gc-vertex-spring-ai-app
